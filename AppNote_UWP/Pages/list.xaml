@@ -1,0 +1,32 @@
+﻿<Page
+    x:Class="AppNote_UWP.Pages.list"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AppNote_UWP.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0,20">
+            <Button Click="Button_Click">Note form</Button>
+            <RelativePanel Margin="0,10">
+                <ListBox x:Name="NoteList" 
+                         ItemsSource="{x:Bind notes}" 
+                         Height="150"
+                         Width="150" 
+                         Tapped="NoteList_Tapped">
+                </ListBox>
+                <TextBox AcceptsReturn="True" 
+                         x:Name="Note" 
+                         RelativePanel.RightOf="NoteList"
+                         MaxHeight="200"
+                         Width="200"
+                         TextWrapping="Wrap"
+                         Header="Note conten">
+                </TextBox>
+            </RelativePanel>
+        </StackPanel>
+    </Grid>
+</Page>
